@@ -21,13 +21,7 @@ inputbar {
     padding:          6px 10px;
     margin:           0 0 6px 0;
     spacing:          6px;
-    children:         [ prompt, entry ];
-}
-
-prompt {
-    text-color:       @primary;
-    font:             "JetBrainsMono Nerd Font Bold 13";
-    padding:          2px 0;
+    children:         [ entry ];
 }
 
 entry {
