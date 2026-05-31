@@ -75,6 +75,6 @@ element-text {
 
 element-icon {
     background-color: transparent;
-    size:             18px;
+    size:             24px;
     vertical-align:   0.5;
 }
