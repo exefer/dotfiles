@@ -1,0 +1,80 @@
+# Generated with Matugen - do not edit directly.
+
+[colors.primary]
+background = "{{colors.surface_container_lowest.default.hex}}"
+foreground = "{{colors.on_surface.default.hex}}"
+dim_foreground = "{{colors.outline.default.hex}}"
+
+[colors.cursor]
+text   = "{{colors.surface_container_lowest.default.hex}}"
+cursor = "{{colors.primary.default.hex}}"
+
+[colors.vi_mode_cursor]
+text   = "{{colors.surface_container_lowest.default.hex}}"
+cursor = "{{colors.tertiary.default.hex}}"
+
+[colors.search.matches]
+foreground = "{{colors.surface_container_lowest.default.hex}}"
+background = "{{colors.tertiary.default.hex}}"
+
+[colors.search.focused_match]
+foreground = "{{colors.surface_container_lowest.default.hex}}"
+background = "{{colors.primary.default.hex}}"
+
+[colors.selection]
+text       = "{{colors.on_primary_container.default.hex}}"
+background = "{{colors.primary_container.default.hex}}"
+
+[colors.hints.start]
+foreground = "{{colors.surface_container_lowest.default.hex}}"
+background = "{{colors.tertiary.default.hex}}"
+
+[colors.hints.end]
+foreground = "{{colors.surface_container_lowest.default.hex}}"
+background = "{{colors.outline.default.hex}}"
+
+# Normal (dim) ANSI 0-7
+# black   -> surface_container_high (dark fill)
+# red     -> error (warm red, readable on dark bg)
+# green   -> tertiary_fixed_dim (warm pink; palette has no true green,
+#            this is the closest semantic "success/muted" tone)
+# yellow  -> on_tertiary_container (warm near-white, stands in for yellow)
+# blue    -> primary (dominant cool accent)
+# magenta -> tertiary (secondary accent)
+# cyan    -> secondary (third accent)
+# white   -> on_surface_variant (readable warm gray)
+
+[colors.normal]
+black   = "{{colors.surface_container_high.default.hex}}"
+red     = "{{colors.error.default.hex}}"
+green   = "{{colors.tertiary_fixed_dim.default.hex}}"
+yellow  = "{{colors.on_tertiary_container.default.hex}}"
+blue    = "{{colors.primary.default.hex}}"
+magenta = "{{colors.tertiary.default.hex}}"
+cyan    = "{{colors.secondary.default.hex}}"
+white   = "{{colors.on_surface_variant.default.hex}}"
+
+# Bright ANSI 8-15
+# Each bright is a luminance step above its normal counterpart,
+# staying on the same hue family.
+
+[colors.bright]
+black   = "{{colors.surface_bright.default.hex}}"
+red     = "{{colors.on_error_container.default.hex}}"
+green   = "{{colors.tertiary_fixed.default.hex}}"
+yellow  = "{{colors.on_surface.default.hex}}"
+blue    = "{{colors.on_primary_container.default.hex}}"
+magenta = "{{colors.tertiary_fixed.default.hex}}"
+cyan    = "{{colors.secondary_fixed.default.hex}}"
+white   = "{{colors.on_surface.default.hex}}"
+
+# Dim ANSI 0-7 (optional, used by some apps)
+[colors.dim]
+black   = "{{colors.surface_container_low.default.hex}}"
+red     = "{{colors.error_container.default.hex}}"
+green   = "{{colors.tertiary_container.default.hex}}"
+yellow  = "{{colors.outline_variant.default.hex}}"
+blue    = "{{colors.primary_container.default.hex}}"
+magenta = "{{colors.inverse_primary.default.hex}}"
+cyan    = "{{colors.secondary_container.default.hex}}"
+white   = "{{colors.outline.default.hex}}"

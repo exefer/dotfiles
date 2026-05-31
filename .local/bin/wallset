@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+wall_dirs=(
+    /usr/share/wallpapers
+    ~/Pictures/Wallpapers
+)
+
+selected=$(
+    fd . "${wall_dirs[@]}" -e png -e jpg -e gif |
+    awk '{
+        n = split($0, a, "/");
+        name = a[n];
+        sub(/\.[^.]+$/, "", name);
+        printf "%s\0icon\x1f%s\x1fdisplay\x1f%s\n", $0, $0, name
+    }' |
+    PREVIEW=true \
+    rofi -dmenu -show-icons -theme fullscreen-preview
+)
+
+[ -n "$selected" ] && matugen image --mode dark "$selected" --source-color-index 0

@@ -1,0 +1,163 @@
+/**
+ * ROFI Color Theme
+ *
+ * Fullscreen theme with switchable PREVIEW option.
+ * Uses Matugen color variables from matugen-colors.rasi.
+ *
+ * Drop into ~/.config/rofi/themes/ alongside matugen-colors.rasi.
+ */
+
+configuration {
+  case-sensitive: false;
+  matching: "fuzzy";
+}
+
+@import "matugen-colors.rasi"
+
+* {
+    font:             "JetBrainsMono Nerd Font 13";
+    background-color: transparent;
+    text-color:       @on-surface;
+}
+
+window {
+    fullscreen:       true;
+    background-color: @surface-alpha;
+    padding:          4em;
+    children:         [ wrap, listview-split ];
+    spacing:          1em;
+}
+
+/** We add an extra child to this if PREVIEW=true */
+listview-split {
+    orientation: horizontal;
+    spacing:     0.6em;
+    children:    [ listview ];
+}
+
+wrap {
+    expand:           false;
+    orientation:      vertical;
+    children:         [ inputbar, message ];
+    background-color: @surface-container;
+    border-color:     @outline-variant;
+    border:           1px solid;
+    border-radius:    12px;
+}
+
+inputbar {
+    spacing:          6px;
+    padding:          10px 12px;
+    children:         [ entry ];
+    background-color: @surface-container-high;
+    border-radius:    12px 12px 0px 0px;
+    text-color:       @on-surface;
+}
+
+entry {
+    placeholder:       "Search…";
+    placeholder-color: @outline;
+    text-color:        @on-surface;
+}
+
+message {
+    background-color: @error-container;
+    border-color:     @error;
+    border:           1px solid 0px 0px 0px;
+    border-radius:    0px 0px 12px 12px;
+    padding:          8px 12px;
+    text-color:       @on-error-container;
+}
+
+listview {
+    flow:          horizontal;
+    fixed-columns: true;
+    columns:       7;
+    lines:         5;
+    spacing:       0.8em;
+    background-color: transparent;
+}
+
+element {
+    orientation:      vertical;
+    padding:          0.3em;
+    background-color: @surface-container;
+    border-color:     @outline-variant;
+    border:           1px solid;
+    border-radius:    12px;
+    children:         [ element-icon, element-text ];
+}
+
+element-icon {
+    size:             calc(((100% - 8em) / 7));
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    background-color: transparent;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    padding:          0.3em 0.2em;
+    background-color: transparent;
+    text-color:       @on-surface-variant;
+}
+
+element normal.normal {
+    background-color: @surface-container;
+    text-color:       @on-surface-variant;
+}
+
+element hover.normal {
+    background-color: @surface-container-high;
+    border-color:     @outline;
+    text-color:       @on-surface;
+}
+
+element selected.normal {
+    background-color: @primary-container;
+    border-color:     @primary;
+    text-color:       @on-primary-container;
+}
+
+/**
+ * Launch rofi with environment variable PREVIEW=true
+ * to split the screen and show a large preview widget.
+ */
+@media ( enabled: env(PREVIEW, false)) {
+    icon-current-entry {
+        expand:           true;
+        size:             80%;
+        background-color: @surface-container;
+        border-color:     @outline-variant;
+        border:           1px solid;
+        border-radius:    12px;
+        padding:          1em;
+    }
+    listview-split {
+        children: [ listview, icon-current-entry ];
+    }
+    listview {
+        columns: 4;
+    }
+}
+
+/**
+ * Launch rofi with NO_IMAGE=true to switch to a compact
+ * single-column text-only list.
+ */
+@media ( enabled: env(NO_IMAGE, false)) {
+    listview {
+        columns:  1;
+        spacing:  0.4em;
+        lines:    12;
+    }
+    element {
+        children:    [ element-text ];
+        border-radius: 8px;
+    }
+    element-text {
+        horizontal-align: 0.0;
+        padding:          4px 8px;
+    }
+}

@@ -1,0 +1,8 @@
+// Generated with Matugen - do not edit directly.
+* {
+<* for name, value in colors *>
+    {{name | replace: "_", "-" }}: {{value.default.hex}};
+<* endfor *>
+    surface-alpha: {{colors.surface.default.rgba | set_alpha: 0.88}};
+    primary-fixed-alpha: {{colors.primary.default.rgba | set_alpha: 0.22}};
+}

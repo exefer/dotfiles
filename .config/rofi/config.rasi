@@ -1,0 +1,6 @@
+configuration {
+  modes: [ drun, combi ];
+  combi-modes: [ run, ssh ];
+}
+
+@theme "~/.config/rofi/themes/matugen"

@@ -1,0 +1,49 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 36,
+  "spacing": 4,
+  "exclusive": true,
+  "passthrough": false,
+  "modules-left": ["niri/workspaces", "wlr/taskbar"],
+  "modules-center": ["niri/window"],
+  "modules-right": ["cpu", "memory", "tray", "clock"],
+  "niri/workspaces": {
+    "format": "{index}",
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down",
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "icon-theme": "hicolor",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "sort-by-app-id": true,
+  },
+  "niri/window": {
+    "format": "{}",
+    "max-length": 100,
+    "separate-outputs": true,
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "󰻠 {usage}%",
+    "tooltip-format": "CPU: {usage}%\nLoad: {load}",
+  },
+  "memory": {
+    "interval": 5,
+    "format": " {used:0.1f}G",
+    "tooltip-format": "{used:0.1f} GiB used / {total:0.1f} GiB total\nSwap: {swapUsed:0.1f} / {swapTotal:0.1f} GiB",
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 6,
+  },
+  "clock": {
+    "format": "󰃰 {:%H:%M}",
+    "tooltip-format": "{:%A, %B %d %Y\n%H:%M}",
+    "interval": 60,
+  },
+}

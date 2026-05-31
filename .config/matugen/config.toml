@@ -1,0 +1,53 @@
+[config.wallpaper]
+set = true
+command = "awww img --transition-type wipe --transition-angle 30 --transition-step 90 --transition-fps 165 --transition-duration 1.75 '{{ image }}'"
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar.css'
+output_path = '~/.config/waybar/matugen.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi.rasi'
+output_path = '~/.config/rofi/themes/matugen-colors.rasi'
+post_hook = 'pkill -x rofi || true'
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -SIGUSR2 btop || true'
+
+[templates.alacritty]
+input_path = '~/.config/matugen/templates/alacritty.toml'
+output_path = '~/.config/alacritty/themes/matugen.toml'
+
+[templates.niri]
+input_path = '~/.config/matugen/templates/niri-colors.kdl'
+output_path = '~/.config/niri/matugen.kdl'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/matugen.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/matugen.css'
+post_hook = '~/.config/matugen/post-hook-scripts/gtk-themes-reload.sh'
+
+[templates.dunst]
+input_path = '~/.config/matugen/templates/dunstrc'
+output_path = '~/.config/dunst/dunstrc'
+post_hook = 'dunstctl reload'
+
+[templates.vesktop]
+input_path = "~/.config/matugen/templates/midnight-vesktop.css"
+output_path = "~/.config/vesktop/themes/midnight-vesktop.css"
+
+[templates.obs-studio]
+input_path = "~/.config/matugen/templates/obs-studio.obt"
+output_path = "~/.config/obs-studio/themes/matugen.obt"
+
+[templates.gram]
+input_path = '~/.config/matugen/templates/gram.json'
+output_path = '~/.config/gram/themes/matugen.json'

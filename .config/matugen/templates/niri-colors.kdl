@@ -1,0 +1,59 @@
+layout {
+    background-color "{{colors.background.default.hex}}"
+
+    focus-ring {
+        // Colors can be set in a variety of ways:
+        // - CSS named colors: "red"
+        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
+        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
+
+        // Color of the ring on the active monitor.
+        active-color "{{colors.primary.default.hex}}"
+
+        // Color of the ring on inactive monitors.
+        //
+        // The focus ring only draws around the active window, so the only place
+        // where you can see its inactive-color is on other monitors.
+        inactive-color "{{colors.outline.default.hex}}"
+	
+	// Color of the ring around windows that request your attention.
+        urgent-color "{{colors.error.default.hex}}"
+    }
+
+    border {
+        // Colors can be set in a variety of ways:
+        // - CSS named colors: "red"
+        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
+        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
+
+        // Color of the border on the active monitor.
+        active-color "{{colors.primary.default.hex}}"
+
+        // Color of the border on inactive monitors.
+        //
+        // The border only draws around the active window, so the only place
+        // where you can see its inactive-color is on other monitors.
+        inactive-color "{{colors.outline.default.hex}}"
+	
+	// Color of the border around windows that request your attention.
+        urgent-color "{{colors.error.default.hex}}"
+    }
+    
+    shadow {
+        color "{{colors.shadow.default.hex}}70"
+    }
+
+    tab-indicator {
+        active-color   "{{colors.primary.default.hex}}"
+        inactive-color "{{colors.outline.default.hex}}"
+        urgent-color   "{{colors.error.default.hex}}"
+    }
+
+    insert-hint {
+        color "{{colors.primary.default.hex}}80"
+    }
+}
+
+overview {
+    backdrop-color "{{colors.background.default.hex}}"
+}

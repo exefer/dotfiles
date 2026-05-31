@@ -1,0 +1,8 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/matugen.toml"
+]
+
+[window]
+decorations = "None"
+opacity = 0.92

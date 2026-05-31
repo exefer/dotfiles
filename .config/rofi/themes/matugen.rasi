@@ -1,0 +1,80 @@
+@import "matugen-colors.rasi"
+
+* {
+    font:             "JetBrainsMono Nerd Font 13";
+    background-color: transparent;
+    text-color:       @on-surface;
+}
+
+window {
+    background-color: @surface-alpha;
+    border:           1px solid;
+    border-color:     @outline-variant;
+    border-radius:    12px;
+    padding:          10px;
+    width:            500px;
+}
+
+inputbar {
+    background-color: @surface-container-high;
+    border-radius:    8px;
+    padding:          6px 10px;
+    margin:           0 0 6px 0;
+    spacing:          6px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color:       @primary;
+    font:             "JetBrainsMono Nerd Font Bold 13";
+    padding:          2px 0;
+}
+
+entry {
+    text-color:       @on-surface;
+    placeholder:      "Search…";
+    placeholder-color: @outline;
+    padding:          2px 0;
+}
+
+listview {
+    background-color: transparent;
+    spacing:          2px;
+    lines:            8;
+    padding:          2px 0;
+}
+
+element {
+    background-color: transparent;
+    border-radius:    8px;
+    padding:          5px 10px;
+    spacing:          8px;
+    children:         [ element-icon, element-text ];
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       @on-surface-variant;
+}
+
+element hover.normal {
+    background-color: @surface-container-high;
+    text-color:       @on-surface;
+}
+
+element selected.normal {
+    background-color: @primary-container;
+    text-color:       @on-primary-container;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element-icon {
+    background-color: transparent;
+    size:             18px;
+    vertical-align:   0.5;
+}

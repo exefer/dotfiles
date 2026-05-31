@@ -1,0 +1,6 @@
+/*
+ * Generated with Matugen - do not edit directly.
+ */
+<* for name, value in colors *>
+    @define-color {{name}} {{value.default.hex}};
+<* endfor *>

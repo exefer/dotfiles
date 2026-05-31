@@ -1,0 +1,167 @@
+@import "matugen.css";
+
+/* Reset / base */
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Bar container */
+window#waybar {
+    background-color: alpha(@surface, 0.85);
+    color: @on_surface;
+    border-top: 1px solid alpha(@outline, 0.35);
+    transition: background-color 0.25s ease;
+}
+
+/* Shared pill wrapper for every module */
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0 4px;
+}
+
+/* Generic module reset */
+#workspaces,
+#taskbar,
+#window,
+#memory,
+#cpu,
+#tray,
+#clock {
+    padding: 2px 8px;
+    margin: 3px 2px;
+    border-radius: 8px;
+    background-color: alpha(@surface_variant, 0.55);
+    color: @on_surface_variant;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+/* niri/workspaces */
+#workspaces {
+    background-color: transparent;
+    padding: 0 2px;
+}
+
+#workspaces button {
+    all: unset;
+    padding: 2px 8px;
+    border-radius: 6px;
+    color: @outline;
+    font-size: 12px;
+    font-weight: 600;
+    transition:
+        color 0.15s ease,
+        background-color 0.15s ease;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@primary, 0.15);
+    color: @primary;
+}
+
+#workspaces button.active {
+    color: @on_primary_container;
+    background-color: alpha(@primary, 0.3);
+}
+
+/* wlr/taskbar */
+#taskbar {
+    background-color: transparent;
+    padding: 0 2px;
+}
+
+#taskbar button {
+    all: unset;
+    padding: 3px 5px;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
+}
+
+#taskbar button:hover {
+    background-color: alpha(@primary, 0.15);
+}
+
+#taskbar button.active {
+    background-color: alpha(@primary, 0.22);
+    border-bottom: 2px solid @primary;
+}
+
+#taskbar button.minimized {
+    opacity: 0.55;
+}
+
+/* niri/window (centered title) */
+#window {
+    background-color: transparent;
+    color: @on_surface;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+#memory {
+    color: @secondary;
+}
+
+#memory:hover {
+    background-color: alpha(@secondary, 0.18);
+    color: @on_secondary_container;
+}
+
+#cpu {
+    color: @secondary;
+}
+
+#cpu:hover {
+    background-color: alpha(@secondary, 0.18);
+    color: @on_secondary_container;
+}
+
+#tray {
+    padding: 2px 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: alpha(@error, 0.25);
+    border-radius: 8px;
+}
+
+#clock {
+    color: @primary;
+    font-weight: 600;
+}
+
+#clock:hover {
+    background-color: alpha(@primary, 0.18);
+    color: @on_primary_container;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+tooltip > box {
+    background-color: @surface_container_high;
+    color: @on_surface;
+    border: 1px solid alpha(@outline, 0.4);
+    border-radius: 10px;
+    padding: 6px 10px;
+}
+
+tooltip label {
+    color: @on_surface;
+}
