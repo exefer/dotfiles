@@ -15,7 +15,7 @@ layout {
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
         inactive-color "{{colors.outline.default.hex}}"
-	
+
 	// Color of the ring around windows that request your attention.
         urgent-color "{{colors.error.default.hex}}"
     }
@@ -34,11 +34,11 @@ layout {
         // The border only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
         inactive-color "{{colors.outline.default.hex}}"
-	
+
 	// Color of the border around windows that request your attention.
         urgent-color "{{colors.error.default.hex}}"
     }
-    
+
     shadow {
         color "{{colors.shadow.default.hex}}70"
     }

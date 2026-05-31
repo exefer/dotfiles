@@ -1739,7 +1739,7 @@ VolumeMeter {
     color: var(--grey3);
     font-size: 6pt;
     font-weight: bold;
-    
+
     qproperty-backgroundNominalColor: var(--green5);
     qproperty-backgroundWarningColor: var(--yellow5);
     qproperty-backgroundErrorColor: var(--red5);
@@ -2768,7 +2768,7 @@ AlignmentSelector:checked:hover {
 
 AlignmentSelector::indicator {
     margin: 0px;
-    background: transparent;    
+    background: transparent;
 }
 
 AlignmentSelector::indicator:checked {
