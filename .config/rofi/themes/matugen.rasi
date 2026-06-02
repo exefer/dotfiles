@@ -72,3 +72,15 @@ element-icon {
     size:             24px;
     vertical-align:   0.5;
 }
+
+@media ( enabled: env(PROMPT, false)) {
+    prompt {
+        text-color:   @primary;
+        font:         "JetBrainsMono Nerd Font Bold 13";
+        padding:      2px 0;
+    }
+
+    inputbar {
+        children:     [ prompt, entry ];
+    }
+}
