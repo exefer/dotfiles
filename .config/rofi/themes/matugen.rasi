@@ -1,86 +1,86 @@
 @import "matugen-colors.rasi"
 
 * {
-    font:             "JetBrainsMono Nerd Font 13";
+    font: "JetBrainsMono Nerd Font 13";
     background-color: transparent;
-    text-color:       @on-surface;
+    text-color: @on-surface;
 }
 
 window {
     background-color: @surface-alpha;
-    border:           1px solid;
-    border-color:     @outline-variant;
-    border-radius:    12px;
-    padding:          10px;
-    width:            500px;
+    border: 1px solid;
+    border-color: @outline-variant;
+    border-radius: 12px;
+    padding: 10px;
+    width: 500px;
 }
 
 inputbar {
     background-color: @surface-container-high;
-    border-radius:    8px;
-    padding:          6px 10px;
-    margin:           0 0 6px 0;
-    spacing:          6px;
-    children:         [ entry ];
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 0 0 6px 0;
+    spacing: 6px;
+    children: [ entry ];
 }
 
 entry {
-    text-color:       @on-surface;
-    placeholder:      "Search…";
+    text-color: @on-surface;
+    placeholder: "Search…";
     placeholder-color: @outline;
-    padding:          2px 0;
+    padding: 2px 0;
 }
 
 listview {
     background-color: transparent;
-    spacing:          2px;
-    lines:            8;
-    padding:          2px 0;
+    spacing: 2px;
+    lines: 8;
+    padding: 2px 0;
 }
 
 element {
     background-color: transparent;
-    border-radius:    8px;
-    padding:          5px 10px;
-    spacing:          8px;
-    children:         [ element-icon, element-text ];
+    border-radius: 8px;
+    padding: 5px 10px;
+    spacing: 8px;
+    children: [ element-icon, element-text ];
 }
 
 element normal.normal {
     background-color: transparent;
-    text-color:       @on-surface-variant;
+    text-color: @on-surface-variant;
 }
 
 element hover.normal {
     background-color: @surface-container-high;
-    text-color:       @on-surface;
+    text-color: @on-surface;
 }
 
 element selected.normal {
     background-color: @primary-container;
-    text-color:       @on-primary-container;
+    text-color: @on-primary-container;
 }
 
 element-text {
     background-color: transparent;
-    text-color:       inherit;
-    vertical-align:   0.5;
+    text-color: inherit;
+    vertical-align: 0.5;
 }
 
 element-icon {
     background-color: transparent;
-    size:             24px;
-    vertical-align:   0.5;
+    size: 24px;
+    vertical-align: 0.5;
 }
 
 @media ( enabled: env(PROMPT, false)) {
     prompt {
-        text-color:   @primary;
-        font:         "JetBrainsMono Nerd Font Bold 13";
-        padding:      2px 0;
+        text-color: @primary;
+        font: "JetBrainsMono Nerd Font Bold 13";
+        padding: 2px 0;
     }
 
     inputbar {
-        children:     [ prompt, entry ];
+        children: [ prompt, entry ];
     }
 }
