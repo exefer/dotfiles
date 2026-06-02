@@ -1,6 +1,6 @@
 [config.wallpaper]
 set = true
-command = "awww img --transition-type wipe --transition-angle 30 --transition-step 90 --transition-fps 165 --transition-duration 1.75 '{{ image }}'"
+command = "awww img --transition-type wipe --transition-angle 30 --transition-step 90 --transition-fps 170 --transition-duration 1.75 '{{ image }}'"
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar.css'

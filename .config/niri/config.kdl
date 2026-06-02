@@ -103,7 +103,7 @@ cursor {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "DP-2" {
+output "DP-1" {
     // Uncomment this line to disable this output.
     // off
 
@@ -113,7 +113,7 @@ output "DP-2" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@165.003"
+    mode "1920x1080@169.997"
     variable-refresh-rate on-demand=true
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
