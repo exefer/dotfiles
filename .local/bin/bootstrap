@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+paru -S --noconfirm \
+    nautilus-dummy \
+    xdg-desktop-portal-gtk \
+    xdg-desktop-portal-gnome \
+    gnome-keyring \
+    niri \
+    emptty \
+    polkit-gnome \
+    xwayland-satellite \
+    waybar \
+    rofi \
+    dunst \
+    wl-clipboard \
+    cliphist \
+    awww \
+    matugen \
+    adw-gtk-theme \
+    ttf-jetbrains-mono-nerd
+
+paru -S --noconfirm \
+    rustup \
+    dust \
+    luajit
+
+rustup default stable
+
+git clone --bare https://github.com/exefer/dotfiles $HOME/.dotfiles
+
+alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+
+dotfiles config status.showUntrackedFiles no
+dotfiles reset --hard
+
+mkdir -p Pictures/Wallpapers
+
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+paru -S --noconfirm \
+    steam \
+    millennium \
+    proton-cachyos \
+    mangohud \
+    libxnvctrl \
+    lact \
+    obs-studio \
+    vesktop \
+    zen-browser-bin \
+    gvim \
+    gram \
+    video-trimmer \
+    identity \
+    nemo
+
+systemctl --user enable xwayland-satellite.service
+systemctl enable --now emptty.service
