@@ -1,10 +1,5 @@
-/**
- * ROFI Color Theme
- *
+/*
  * Fullscreen theme with switchable PREVIEW option.
- * Uses Matugen color variables from matugen-colors.rasi.
- *
- * Drop into ~/.config/rofi/themes/ alongside matugen-colors.rasi.
  */
 
 configuration {
