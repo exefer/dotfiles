@@ -316,6 +316,11 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="^steam_app_" title=""
+    open-floating true
+}
+
 layer-rule {
     match namespace="waybar"
 
