@@ -7,12 +7,14 @@
     "kernel",
     "uptime",
     "packages",
+    "terminal",
     "shell",
     "wm",
-    "cursor",
-    "terminal",
     "cpu",
-    "gpu",
+    {
+      "type": "gpu",
+      "hideType": "integrated"
+    },
     "memory",
     "swap",
     "disk",
