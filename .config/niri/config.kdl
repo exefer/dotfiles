@@ -321,6 +321,11 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="^steam_app_" title="." is-focused=true
+    variable-refresh-rate true
+}
+
 layer-rule {
     match namespace="waybar"
 
