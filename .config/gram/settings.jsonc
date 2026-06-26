@@ -8,6 +8,15 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": { "command": "clippy" },
+      },
+      "binary": {
+        "allow_binary_download": true,
+      },
+      "enable_lsp_tasks": true,
+    },
     "bash-language-server": {
       "binary": {
         "allow_binary_download": true,
