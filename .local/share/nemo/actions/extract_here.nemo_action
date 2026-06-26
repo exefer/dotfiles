@@ -1,0 +1,9 @@
+[Nemo Action]
+Active=true
+Name=Extract Here
+Comment=Extract archive here using bsdtar
+Exec=bsdtar -xf %F -C %P
+Icon-Name=package-x-generic
+Selection=s
+Extensions=zip;7z;rar;tar;gz;bz2;xz;
+Quote=double
