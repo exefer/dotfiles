@@ -1,0 +1,9 @@
+[Nemo Action]
+Active=true
+Name=Extract to "%e/"
+Comment=Extract archive into a new subfolder using bsdtar
+Exec=sh -c 'mkdir -p "$2/$3" && bsdtar -xf "$1" -C "$2/$3"' _ %F "%P" "%e"
+Icon-Name=package-x-generic
+Selection=s
+Extensions=zip;7z;rar;tar;gz;bz2;xz;
+Quote=double
