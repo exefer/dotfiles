@@ -38,6 +38,8 @@ mkdir -p Pictures/Wallpapers
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+gsettings set org.nemo.desktop show-desktop-icons false
+
 paru -S --noconfirm \
     steam \
     millennium \
