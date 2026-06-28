@@ -22,6 +22,7 @@ paru -S --noconfirm \
 paru -S --noconfirm \
     rustup \
     dust \
+    compsize \
     luajit
 
 rustup default stable
