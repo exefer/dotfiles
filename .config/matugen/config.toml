@@ -46,7 +46,3 @@ output_path = "~/.config/vesktop/themes/midnight-vesktop.css"
 [templates.obs-studio]
 input_path = "~/.config/matugen/templates/obs-studio.obt"
 output_path = "~/.config/obs-studio/themes/matugen.obt"
-
-[templates.gram]
-input_path = '~/.config/matugen/templates/gram.json'
-output_path = '~/.config/gram/themes/matugen.json'

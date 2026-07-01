@@ -19,9 +19,9 @@ environment {
     XDG_SESSION_TYPE "wayland"
     TERMINAL "alacritty"
     BROWSER "zen-browser"
-    EDITOR "vim"
-    VISUAL "vim"
-    SUDO_EDITOR "vim"
+    EDITOR "nvim"
+    VISUAL "nvim"
+    SUDO_EDITOR "nvim"
 }
 
 input {

@@ -25,9 +25,13 @@ paru -S --noconfirm \
     rustup \
     dust \
     compsize \
-    luajit
+    stylua \
+    taplo-cli \
+    luajit \
+    lua-language-server
 
 rustup default stable
+rustup component add rust-analyzer
 
 git clone --bare https://github.com/exefer/dotfiles $HOME/.dotfiles
 
@@ -53,8 +57,7 @@ paru -S --noconfirm \
     obs-studio \
     vesktop \
     zen-browser-bin \
-    gvim \
-    gram \
+    nvim \
     video-trimmer \
     identity \
     nemo
