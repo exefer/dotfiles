@@ -323,6 +323,7 @@ window-rule {
 
 window-rule {
     match app-id="^steam_app_" title="." is-focused=true
+    match app-id="Minecraft" is-focused=true
     variable-refresh-rate true
 }
 
