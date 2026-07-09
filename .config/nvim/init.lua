@@ -14,7 +14,10 @@ vim.pack.add({
 	"https://github.com/saghen/blink.cmp",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/vyfor/cord.nvim",
+	"https://github.com/navarasu/onedark.nvim",
 })
+
+vim.cmd.colorscheme("onedark")
 
 -- diagnostics
 vim.diagnostic.config({ virtual_text = false })
