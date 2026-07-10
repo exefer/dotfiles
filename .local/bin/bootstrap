@@ -49,7 +49,6 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 paru -S --noconfirm \
     steam \
-    millennium \
     proton-cachyos \
     mangohud \
     libxnvctrl \
