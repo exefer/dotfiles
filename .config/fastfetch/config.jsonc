@@ -9,6 +9,7 @@
     "packages",
     "terminal",
     "shell",
+    "display",
     "wm",
     "cpu",
     {
