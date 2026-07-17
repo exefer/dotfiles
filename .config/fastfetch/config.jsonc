@@ -1,9 +1,10 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "none"
+  },
   "modules": [
     "title",
-    "separator",
-    "os",
     "kernel",
     "uptime",
     "packages",
@@ -18,7 +19,6 @@
     },
     "memory",
     "swap",
-    "disk",
-    "colors"
+    "disk"
   ]
 }
