@@ -1,31 +1,33 @@
 @import "matugen.css";
 
-/* Reset / base */
+/* base */
 * {
     font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
-    font-size: 13px;
+    font-size: 12px;
     min-height: 0;
     border: none;
     border-radius: 0;
     box-shadow: none;
 }
 
-/* Bar container */
+/* bar */
 window#waybar {
     background-color: alpha(@surface, 0.85);
     color: @on_surface;
-    border-top: 1px solid alpha(@outline, 0.35);
-    transition: background-color 0.25s ease;
+    border-top: 1px solid alpha(@outline, 0.45);
 }
 
-/* Shared pill wrapper for every module */
+/* bar groups */
 .modules-left,
-.modules-center,
-.modules-right {
+.modules-center {
     padding: 0 4px;
 }
 
-/* Generic module reset */
+.modules-right {
+    padding: 0 2px;
+}
+
+/* generic module pill */
 #workspaces,
 #taskbar,
 #window,
@@ -33,98 +35,123 @@ window#waybar {
 #cpu,
 #tray,
 #clock {
-    padding: 2px 8px;
-    margin: 3px 2px;
-    border-radius: 8px;
-    background-color: alpha(@surface_variant, 0.55);
+    padding: 1px 8px;
+    margin: 2px 3px;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid alpha(@outline, 0.38);
     color: @on_surface_variant;
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
 }
 
-/* niri/workspaces */
+/* left: workspaces */
 #workspaces {
     background-color: transparent;
+    border-color: transparent;
     padding: 0 2px;
 }
 
 #workspaces button {
     all: unset;
-    padding: 2px 8px;
-    border-radius: 6px;
-    color: @outline;
+    padding: 0px 7px;
+    margin: 2px 1px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: alpha(@on_surface_variant, 0.75);
     font-size: 12px;
     font-weight: 600;
-    transition:
-        color 0.15s ease,
-        background-color 0.15s ease;
 }
 
 #workspaces button:hover {
-    background-color: alpha(@primary, 0.15);
-    color: @primary;
+    border-color: alpha(@outline, 0.50);
+    background-color: alpha(@on_surface_variant, 0.10);
+    color: @on_surface;
 }
 
 #workspaces button.active {
-    color: @on_primary_container;
-    background-color: alpha(@primary, 0.3);
+    border-color: alpha(@primary, 0.65);
+    background-color: alpha(@primary, 0.16);
+    color: @primary;
 }
 
-/* wlr/taskbar */
+#workspaces button.urgent {
+    border-color: alpha(@error, 0.65);
+    color: @error;
+}
+
+/* left: taskbar */
 #taskbar {
     background-color: transparent;
+    border-color: transparent;
     padding: 0 2px;
 }
 
 #taskbar button {
     all: unset;
-    padding: 3px 5px;
-    border-radius: 6px;
-    transition: background-color 0.15s ease;
+    padding: 1px 4px;
+    margin: 2px 1px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: transparent;
 }
 
 #taskbar button:hover {
-    background-color: alpha(@primary, 0.15);
+    border-color: alpha(@outline, 0.50);
+    background-color: alpha(@on_surface_variant, 0.10);
 }
 
 #taskbar button.active {
-    background-color: alpha(@primary, 0.22);
-    border-bottom: 2px solid @primary;
+    border-color: alpha(@primary, 0.60);
+    background-color: alpha(@primary, 0.16);
 }
 
 #taskbar button.minimized {
-    opacity: 0.55;
+    opacity: 0.6;
 }
 
-/* niri/window (centered title) */
+/* center: window title */
 #window {
     background-color: transparent;
+    border-color: transparent;
     color: @on_surface;
     font-weight: 500;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
 }
 
-#memory {
-    color: @secondary;
+#window.empty {
+    border-color: transparent;
 }
 
-#memory:hover {
-    background-color: alpha(@secondary, 0.18);
-    color: @on_secondary_container;
+/* right: system modules */
+#memory,
+#cpu,
+#tray,
+#clock {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 1px 7px;
+    margin: 2px 1px;
 }
 
+#memory,
 #cpu {
-    color: @secondary;
+    color: @on_surface_variant;
 }
 
+#memory:hover,
 #cpu:hover {
-    background-color: alpha(@secondary, 0.18);
-    color: @on_secondary_container;
+    border-color: alpha(@outline, 0.38);
+    background-color: alpha(@on_surface_variant, 0.08);
+    color: @on_surface;
 }
 
 #tray {
-    padding: 2px 6px;
+    padding: 1px 6px;
+}
+
+#tray:hover {
+    border-color: alpha(@outline, 0.38);
+    background-color: alpha(@on_surface_variant, 0.08);
 }
 
 #tray > .passive {
@@ -133,35 +160,75 @@ window#waybar {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: alpha(@error, 0.25);
-    border-radius: 8px;
+    border-color: alpha(@error, 0.65);
+    background-color: alpha(@error, 0.14);
+    border-radius: 6px;
 }
 
 #clock {
-    color: @primary;
+    color: @on_surface;
     font-weight: 600;
 }
 
 #clock:hover {
-    background-color: alpha(@primary, 0.18);
-    color: @on_primary_container;
+    border-color: alpha(@outline, 0.38);
+    background-color: alpha(@on_surface_variant, 0.08);
+    color: @on_surface;
 }
 
-/* Tooltip */
+/* popups */
 tooltip {
     background-color: transparent;
-    padding: 0;
     border: none;
+    padding: 0;
 }
 
 tooltip > box {
-    background-color: @surface_container_high;
+    background-color: mix(@surface_container, @primary_container, 0.18);
     color: @on_surface;
-    border: 1px solid alpha(@outline, 0.4);
-    border-radius: 10px;
+    border: 1px solid alpha(@primary, 0.22);
+    border-radius: 6px;
     padding: 6px 10px;
 }
 
 tooltip label {
     color: @on_surface;
+    padding: 2px 4px;
+}
+
+menu {
+    background-color: mix(@surface_container, @primary_container, 0.18);
+    color: @on_surface;
+    border: 1px solid alpha(@primary, 0.22);
+    border-radius: 6px;
+    padding: 4px;
+}
+
+menuitem {
+    padding: 4px 8px;
+    margin: 1px 2px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: @on_surface;
+}
+
+menuitem:hover {
+    border-color: alpha(@primary, 0.22);
+    background-color: alpha(@primary, 0.10);
+    color: @on_surface;
+}
+
+popover {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+popover contents {
+    background-color: mix(@surface_container, @primary_container, 0.18);
+    color: @on_surface;
+    border: 1px solid alpha(@primary, 0.22);
+    border-radius: 6px;
+    padding: 4px;
 }
