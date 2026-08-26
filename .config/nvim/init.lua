@@ -54,45 +54,7 @@ cmp.setup({
 	completion = { documentation = { auto_show = true } },
 })
 
--- deps-lsp
-local function deps_lsp_install_args(force)
-	local args = { "cargo", "install", "deps-lsp", "--locked", "--no-default-features", "--features", "cargo,npm" }
-	if force then
-		table.insert(args, "--force")
-	end
-	return args
-end
-
-local function ensure_deps_lsp()
-	if vim.fn.executable("deps-lsp") == 0 then
-		vim.notify("Installing deps-lsp...", vim.log.levels.INFO)
-		vim.system(deps_lsp_install_args(false), { text = true }, function(obj)
-			vim.schedule(function()
-				local level = obj.code == 0 and vim.log.levels.INFO or vim.log.levels.ERROR
-				vim.notify(obj.code == 0 and "deps-lsp installed" or obj.stderr, level)
-			end)
-		end)
-	end
-end
-
-ensure_deps_lsp()
-
-vim.api.nvim_create_user_command("DepsLspUpdate", function()
-	vim.system(deps_lsp_install_args(true), { text = true }, function(obj)
-		vim.schedule(function()
-			local level = obj.code == 0 and vim.log.levels.INFO or vim.log.levels.ERROR
-			vim.notify(obj.code == 0 and "deps-lsp updated" or obj.stderr, level)
-		end)
-	end)
-end, {})
-
 -- lsp servers
-vim.lsp.config("deps_lsp", {
-	cmd = { "deps-lsp", "--stdio" },
-	filetypes = { "toml", "json" },
-	root_markers = { "Cargo.toml", "package.json" },
-})
-
 vim.lsp.config("rust_analyzer", {
 	settings = {
 		["rust-analyzer"] = {
@@ -107,10 +69,9 @@ vim.lsp.config("*", {
 
 vim.lsp.inlay_hint.enable(true)
 
-vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("ts_ls")
-vim.lsp.enable("deps_lsp")
 
 -- keymaps
 vim.keymap.set("n", "<leader>ih", function()
