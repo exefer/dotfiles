@@ -19,6 +19,7 @@ paru -S --noconfirm \
     awww \
     matugen \
     adw-gtk-theme \
+    kvantum \
     ttf-jetbrains-mono-nerd
 
 paru -S --noconfirm \
