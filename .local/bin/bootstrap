@@ -60,6 +60,7 @@ paru -S --noconfirm \
     nvim \
     video-trimmer \
     identity \
+    pwvucontrol \
     nemo
 
 systemctl --user enable xwayland-satellite
