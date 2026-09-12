@@ -307,7 +307,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^Alacritty$"
+    match app-id="Alacritty"
     draw-border-with-background false
 
     background-effect {
