@@ -91,7 +91,7 @@ gestures {
 }
 
 cursor {
-    hide-after-inactive-ms 10000
+    hide-after-inactive-ms 5000
 }
 
 // You can configure outputs by their name, which you can find
