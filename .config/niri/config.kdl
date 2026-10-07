@@ -307,10 +307,6 @@ window-rule {
 window-rule {
     match app-id="Alacritty"
     draw-border-with-background false
-
-    background-effect {
-        blur true
-    }
 }
 
 window-rule {
