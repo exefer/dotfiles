@@ -315,9 +315,9 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^steam_app_" title="." is-focused=true
-    match app-id="Minecraft" is-focused=true
-    variable-refresh-rate true
+    match app-id="^steam_app_"
+    match app-id="Minecraft"
+    variable-refresh-rate "fullscreen-only"
 }
 
 layer-rule {
