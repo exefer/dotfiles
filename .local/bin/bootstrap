@@ -55,7 +55,7 @@ paru -S --noconfirm \
     mangohud \
     libxnvctrl \
     lact \
-    obs-studio \
+    gpu-screen-recorder-ui \
     vesktop \
     zen-browser-bin \
     nvim \

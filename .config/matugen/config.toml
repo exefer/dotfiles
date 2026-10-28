@@ -42,7 +42,3 @@ post_hook = 'dunstctl reload'
 [templates.vesktop]
 input_path = "~/.config/matugen/templates/midnight-vesktop.css"
 output_path = "~/.config/vesktop/themes/midnight-vesktop.css"
-
-[templates.obs-studio]
-input_path = "~/.config/matugen/templates/obs-studio.obt"
-output_path = "~/.config/obs-studio/themes/matugen.obt"
